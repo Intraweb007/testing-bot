@@ -14,11 +14,11 @@ class BotManController extends Controller
 
         $botman->hears('ssl-info {url}', function (BotMan $bot, $url) {
             $check = CheckSsl::check($url);
-            if($check) {
+            if($check){
                 $bot->reply($check['issuer']);
                 $bot->reply($check['valid']);
                 $bot->reply($check['expire']);
-            } else {
+            } else{
                 $bot->reply('Error! Check domain again');
             }
         });
