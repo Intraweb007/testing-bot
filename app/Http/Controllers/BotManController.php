@@ -28,8 +28,11 @@ class BotManController extends Controller
             }
         });
 
+        $botman->hears('hello', function (BotMan $bot) {
+                $bot->reply('Hi!');
+        });
+
         $botman->listen();
-        return 1;
     }
 
     public function startConversation(BotMan $bot)
