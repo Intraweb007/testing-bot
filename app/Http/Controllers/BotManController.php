@@ -17,19 +17,15 @@ class BotManController extends Controller
 
         $botman = BotManFactory::create($config);
 
-        $botman->hears('sss-info {url}', function (BotMan $bot, $url) {
+        $botman->hears('ssl-info {url}', function (BotMan $bot, $url) {
             $check = CheckSsl::check($url);
             if($check){
                 $bot->reply($check['issuer']);
-              //  $bot->reply($check['valid']);
-              //  $bot->reply($check['expire']);
+                $bot->reply($check['valid']);
+                $bot->reply($check['expire']);
             } else{
                 $bot->reply('Error! Check domain again');
             }
-        });
-
-        $botman->hears('hello', function (BotMan $bot) {
-                $bot->reply('Hi!');
         });
 
         $botman->listen();
