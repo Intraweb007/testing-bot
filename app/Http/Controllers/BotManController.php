@@ -5,15 +5,12 @@ namespace App\Http\Controllers;
 use App\CheckSsl;
 use App\Conversations\ExampleConversation;
 use Mpociot\BotMan\BotMan;
-use Mpociot\BotMan\BotManFactory;
 
 class BotManController extends Controller
 {
     public function handle()
     {
-        $botman = BotManFactory::create([
-            'telegram_token' => '318862221:AAE36OHQRpABx_4rXQ5gZyd8k1v8jnDVi_g'
-        ]);
+        $botman = app('botman');
 
         $botman->hears('ssl-info {url}', function (BotMan $bot, $url) {
             $check = CheckSsl::check($url);
