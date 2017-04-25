@@ -3,7 +3,7 @@
 return [
 
     'botman' => [
-        'telegram_token' => env('318862221:AAE36OHQRpABx_4rXQ5gZyd8k1v8jnDVi_g')
+        'telegram_token' => env('TELEGRAM_TOKEN')
     ],
 
     'mailgun' => [

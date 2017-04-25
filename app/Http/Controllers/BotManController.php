@@ -10,7 +10,7 @@ class BotManController extends Controller
 {
     public function handle()
     {
-        $botman = app('botman');
+        $botman = app(('botman'));
 
         $botman->hears('ssl-info {url}', function (BotMan $bot, $url) {
             $check = CheckSsl::check($url);
