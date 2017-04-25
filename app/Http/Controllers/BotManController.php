@@ -21,8 +21,8 @@ class BotManController extends Controller
             $check = CheckSsl::check($url);
             if($check){
                 $bot->reply($check['issuer']);
-                $bot->reply($check['valid']);
-                $bot->reply($check['expire']);
+              //  $bot->reply($check['valid']);
+              //  $bot->reply($check['expire']);
             } else{
                 $bot->reply('Error! Check domain again');
             }
