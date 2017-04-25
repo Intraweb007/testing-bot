@@ -29,7 +29,7 @@ class BotManController extends Controller
         });
 
         $botman->listen();
-      //  dd($botman);
+        return 1;
     }
 
     public function startConversation(BotMan $bot)
