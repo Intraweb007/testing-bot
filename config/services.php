@@ -1,6 +1,11 @@
 <?php
 
 return [
+
+    'botman' => [
+        'telegram_token' => env('318862221:AAE36OHQRpABx_4rXQ5gZyd8k1v8jnDVi_g')
+    ],
+
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),
         'secret' => env('MAILGUN_SECRET'),
