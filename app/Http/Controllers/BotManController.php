@@ -26,6 +26,7 @@ class BotManController extends Controller
         });
 
         $botman->listen();
+        dd($botman);
     }
 
     public function startConversation(BotMan $bot)
