@@ -10,9 +10,7 @@ class BotManController extends Controller
 {
     public function handle()
     {
-      //  $botman = BotManFactory::create(env('TELEGRAM_TOKEN'));
-
-        $botman = app(env('TELEGRAM_TOKEN'));
+        $botman = BotManFactory::create(['telegram_token' => env('TELEGRAM_TOKEN')]);
 
         $botman->hears('ssl-info {url}', function (BotMan $bot, $url) {
             $check = CheckSsl::check($url);
