@@ -15,13 +15,7 @@ class BotManController extends Controller
             'telegram_token' => '318862221:AAE36OHQRpABx_4rXQ5gZyd8k1v8jnDVi_g'
         ];
 
-// create an instance
         $botman = BotManFactory::create($config);
-
-
-    	//$botman = app('botman');
-
-      //  $botman->verifyServices(env('TOKEN_VERIFY'));
 
         $botman->hears('sss-info {url}', function (BotMan $bot, $url) {
             $check = CheckSsl::check($url);
@@ -35,7 +29,7 @@ class BotManController extends Controller
         });
 
         $botman->listen();
-        dd($botman);
+      //  dd($botman);
     }
 
     public function startConversation(BotMan $bot)
